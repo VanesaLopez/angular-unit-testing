@@ -23,4 +23,8 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
+
+  it('should be header', () => {
+    expect('app-header').toBeDefined();
+  });
 });
