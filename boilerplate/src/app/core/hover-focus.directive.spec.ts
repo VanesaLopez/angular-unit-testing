@@ -1,7 +1,7 @@
 import { HoverFocusDirective } from './hover-focus.directive';
 
-describe('OnlyNumberDirective', () => {
-  it('Montamos la directiva', () => {
+describe('HoverFocusDirective', () => {
+  it('should create an instance', () => {
     const directive = new HoverFocusDirective();
     expect(directive).toBeTruthy();
   });
