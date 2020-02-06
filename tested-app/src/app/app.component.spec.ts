@@ -1,10 +1,18 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from './app.component';
+
 import { HeaderComponent } from './core/header/header.component';
 import { AuthenticationService } from './core/authentication.service';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let debugElement: DebugElement;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -18,13 +26,19 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    debugElement = fixture.debugElement;
+    fixture.detectChanges();
+  });
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+      expect(component).toBeTruthy();
   });
 
   it('should be header', () => {
-    expect('app-header').toBeDefined();
+    const header =  debugElement.query(By.css('app-header'));
+    expect(header).toBeDefined();
   });
 });

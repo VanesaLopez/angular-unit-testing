@@ -47,4 +47,8 @@ describe('HeaderComponent', () => {
     expect(component.needsLogin()).toBeFalsy();
     expect(service.isAuthenticated).toHaveBeenCalled();
   });
+
+  it('canLogin returns false when the user is not authenticated', () => {
+    expect(component.needsLogin()).toBeFalsy();
+  });
 });
